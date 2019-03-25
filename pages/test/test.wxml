@@ -1,0 +1,4 @@
+<!--pages/test/test.wxml-->
+<view wx:for="{{goods}}" wx:for-item="good" wx:key="id">
+<block>{{ good.id }}, {{ good.name }}, {{ good.price }}</block>
+</view>

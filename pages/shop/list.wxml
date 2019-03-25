@@ -1,0 +1,39 @@
+<view class="goodlist">
+  <block> 
+    <view class="good-list" wx:for="{{goods}}" wx:for-item="good" wx:key="id" bindtap="test" data-id="{{good.id}}">
+      <view class="good-list-info">
+        <image class="good-list-photo" src="{{good.pictureUrl1!='null'?'https://localhost:44390/' + good.pictureUrl1:'https://localhost:44390/upload/null.jpg'}}"/>
+          <view class="good-list-desc"><text id="good-name">{{good.name}}</text></view>
+          <view class="good-list-money"><text id="good-money">￥{{good.price}}</text><text id="good-quantity">{{good.quantity}}人付款          </text></view>   
+      </view>
+    </view>
+    <!-- <view class="good-list">
+      <view class="good-list-info">
+        <image class="good-list-photo" src="http://xl.tianjiaoedu.org/upload/201607/05/201607051554541730.jpg"/>
+          <view class="good-list-desc"><text>维达纸巾</text></view>
+          <view class="good-list-money"><text id="text-money">￥3.00</text><text id="text-count">12315人付款</text></view>   
+      </view>
+    </view>
+    <view class="good-list">
+      <view class="good-list-info">
+        <image class="good-list-photo" src="http://xl.tianjiaoedu.org/upload/201607/05/201607051554541730.jpg"/>
+          <view class="good-list-desc"><text>维达纸巾</text></view>
+          <view class="good-list-money"><text id="text-money">￥3.00</text><text id="text-count">12315人付款</text></view>   
+      </view>
+    </view>
+    <view class="good-list">
+      <view class="good-list-info">
+        <image class="good-list-photo" src="http://xl.tianjiaoedu.org/upload/201607/05/201607051554541730.jpg"/>
+          <view class="good-list-desc"><text>维达纸巾</text></view>
+          <view class="good-list-money"><text id="text-money">￥3.00</text><text id="text-count">12315人付款</text></view>   
+      </view>
+    </view>
+    <view class="good-list">
+      <view class="good-list-info">
+        <image class="good-list-photo" src="http://xl.tianjiaoedu.org/upload/201607/05/201607051554541730.jpg"/>
+          <view class="good-list-desc"><text>维达纸巾</text></view>
+          <view class="good-list-money"><text id="text-money">￥3.00</text><text id="text-count">12315人付款</text></view>   
+      </view>
+    </view> -->
+  </block>
+</view>

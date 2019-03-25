@@ -1,0 +1,45 @@
+.good-show {
+  width: 100%;
+  height: 100%;
+  background-color: #d7d7d7;
+}
+
+.title {
+  padding: 30rpx;
+  border: 1px solid #d7d7d7;
+  font-weight: bold;
+  background-color: #fff;
+}
+
+.presentation {
+  padding: 30rpx;
+  height: 200rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+  border: 1px solid #d7d7d7;
+}
+
+#presentation {
+  padding-left: 70rpx;
+  padding-top: 70rpx;
+}
+
+.condition {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20rpx;
+  background-color: #fff;
+  border: 1px solid #d7d7d7;
+  margin-top: 20rpx;
+  height: 50rpx;
+  font-size: 30rpx;
+}
+
+.font {
+  background-color: #fff;
+  border: 1px solid #d7d7d7;
+  margin-top: 20rpx;
+  height: 110rpx;
+  font-size: 30rpx;
+}
