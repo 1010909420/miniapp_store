@@ -1,5 +1,6 @@
 //app.js
 App({
+
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -9,7 +10,13 @@ App({
     // 登录
     wx.login({
       success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        this.globalData.code = res.code;
+        // wx.request({
+        //   url: 'https://localhost:44390/Port/GetOpenid?code=' + res.code,
+        //   success: json => {
+        //     console.log(json);
+        //   }
+        // });
       }
     })
     // 获取用户信息
@@ -21,7 +28,21 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
-
+            
+              console.log(this.globalData.code);
+              wx.request({
+                url: 'https://localhost:44390/Port/SaveOrUpdateUserInfo',
+                method: 'get',
+                data: {
+                  code: this.globalData.code,
+                  nickName: this.globalData.userInfo.nickName,
+                  gender: this.globalData.userInfo.gender
+                },
+                success: json => {
+                  this.globalData.userId = json.data;
+                  console.log(this.globalData.userId)
+                }
+              })
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
@@ -34,6 +55,9 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    code: null,
+    userId: null,
+    ipUrl: "https://localhost:44390/Port/"
   }
 })

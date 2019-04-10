@@ -22,7 +22,7 @@ Page({
     var id = options.id;
     var array = this.data.arr;
     wx.request({
-      url: 'https://localhost:44390/store/GetGoodsById?goodsId=' + id,
+      url: 'https://localhost:44390/Port/GetGoodsById?goodsId=' + id,
       success: function(json) {
         if (json.data.pictureUrl1 != 'null') {
           array.push("https://localhost:44390/" + json.data.pictureUrl1);

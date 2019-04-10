@@ -1,0 +1,30 @@
+<view class='app'>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <text>收件人姓名：</text>
+    <view class="section">
+      <input name="name" value="{{addr.name}}"/>
+    </view>
+
+    <text>收件人联系方式：</text>
+    <view class="section">
+      <input name="mobile" value="{{addr.mobile}}"/>
+    </view>
+  
+    <text>收件地址：</text> 
+    <view class="section1">
+      <textarea value="{{addr.addr}}" name="addr" />
+    </view>
+  
+    <view>默认地址:</view>
+    <view class="section section_gap">
+      <radio-group name="defaultAddr" value="{{addr.defaultAddr}}">
+        <label><radio value="1"/>是</label>
+        <label style='margin-left: 20rpx'><radio value="0"/>否</label>
+      </radio-group>
+    </view>
+
+    <view>
+      <button formType="submit" style="background:#ff9900">提交</button>
+    </view>
+  </form>
+</view>

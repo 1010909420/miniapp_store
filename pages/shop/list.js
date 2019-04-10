@@ -10,7 +10,7 @@ Page({
   onLoad: function (options) {
     var page = this;
     wx.request({
-      url: 'https://localhost:44390/Store/JsonList',
+      url: 'https://localhost:44390/Port/StoreList',
       success: function (json) {
         page.setData({
           goods: json.data

@@ -1,0 +1,27 @@
+<!--pages/addr/addr.wxml-->
+<view class='addrs' wx:for="{{addrlist}}" wx:for-item="addr" wx:key="id" bindtap="edit" data-id="{{addr.id}}">
+  <view class='addrs-top'>
+    <text>{{addr.name}}</text><text>{{addr.mobile}}</text><text id='defaultAddr' wx:if="{{addr.defaultAddr == 1}}">默认</text><button class='edit'>编辑</button>
+  </view>
+  <view class='addrs-bottom'>
+    <text>{{addr.addr}}</text>
+  </view>
+</view>
+<!-- <view class='addrs'>
+  <view class='addrs-top'>
+    <text>名字名字</text><text>12312312312</text><button class='edit'>编辑</button>
+  </view>
+  <view class='addrs-bottom'>
+    <text>啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊阿</text>
+  </view>
+</view>
+<view class='addrs'>
+  <view class='addrs-top'>
+    <text>名字名字</text><text>12312312312</text><button class='edit'>编辑</button>
+  </view>
+  <view class='addrs-bottom'>
+    <text>啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊阿</text>
+  </view>
+</view> -->
+
+<button bindtap="edit" data-id="0">添加新地址</button>

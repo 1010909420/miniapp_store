@@ -5,7 +5,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goods: {}
+    jsonStr: '',
+    inputUrl: ''
+  },
+
+
+  setUrl: function(event) {
+    var page = this;
+    page.setData({
+      inputUrl: event.detail.value
+    });
+  },
+
+  submit: function(event) {
+    var page = this;
+    wx.request({
+      url: page.data.inputUrl,
+      success: function(json) {
+        page.setData({
+          jsonStr: JSON.stringify(json.data)
+        });
+      },
+      fail: function() {
+        jsonStr: '获取失败'
+      }
+    })
   },
 
   /**
@@ -13,19 +37,20 @@ Page({
    */
   onLoad: function (options) {
     var page = this;
-    wx.request({
-      url: 'https://localhost:44390/Store/JsonList',
-      success: function (json) {
-        page.setData({
-          goods: json.data
-        });
-      }, fail: function () {
-        page.setData({
-          users: 12345
-        });
-      }
+    // wx.request({
+    //   url: 'https://localhost:44390/Port/StoreList',
+    //   success: function (json) {
+    //     page.setData({
+    //       jsonStr: JSON.stringify(json)
+        
+    //     });
+    //   }, fail: function () {
+    //     page.setData({
+    //       jsonStr: '接口调用错误'
+    //     });
+    //   }
       
-    });
+    // });
   },
 
   /**

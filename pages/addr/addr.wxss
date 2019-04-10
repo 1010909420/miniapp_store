@@ -1,0 +1,26 @@
+.addrs {
+  border: 1px #eee solid;
+  padding: 30rpx;
+  padding-top: 10rpx;
+}
+
+.addrs-top {
+  font-size: 35rpx;
+}
+
+.addrs-top text {
+  margin-right: 50rpx;
+}
+
+.addrs-bottom {
+  font-size: 28rpx;
+}
+
+.edit {
+  display: inline;
+}
+
+#defaultAddr {
+  font-size: 35rpx;
+  color: red;
+}

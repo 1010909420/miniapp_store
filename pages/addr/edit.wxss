@@ -1,0 +1,15 @@
+.section{
+    border:1px solid #ddd;
+    width:96%;
+    height:50rpx;
+    margin: 20rpx;
+}
+.section1{
+    border:1px solid #ddd;
+    width:96%;
+    margin: 20rpx;
+}
+
+.app {
+  padding: 20rpx;
+}

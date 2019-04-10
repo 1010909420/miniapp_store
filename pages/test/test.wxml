@@ -1,4 +1,6 @@
-<!--pages/test/test.wxml-->
-<view wx:for="{{goods}}" wx:for-item="good" wx:key="id">
-<block>{{ good.id }}, {{ good.name }}, {{ good.price }}</block>
+<text>接口测试{{inputUrl}}</text>
+<view class="section">
+  <input placeholder="这是一个可以自动聚焦的input" value='{{url}}' bindinput='setUrl' />
+  <button bindtap='submit'>提交</button>
 </view>
+{{jsonStr}}

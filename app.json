@@ -4,7 +4,9 @@
     "pages/logs/logs",
     "pages/test/test",
     "pages/shop/list",
-    "pages/shop/show"
+    "pages/shop/show",
+    "pages/addr/addr",
+    "pages/addr/edit"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -25,9 +27,14 @@
         "text": "物品列表"
       },
       {
+        "pagePath": "pages/addr/addr",
+        "text": "地址管理"
+      },
+      {
         "pagePath": "pages/test/test",
         "text": "测试"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
