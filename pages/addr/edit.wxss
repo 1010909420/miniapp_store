@@ -13,3 +13,7 @@
 .app {
   padding: 20rpx;
 }
+
+.btn {
+  color: #fff
+}

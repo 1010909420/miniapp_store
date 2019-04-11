@@ -17,14 +17,19 @@
   
     <view>默认地址:</view>
     <view class="section section_gap">
-      <radio-group name="defaultAddr" value="{{addr.defaultAddr}}">
-        <label><radio value="1"/>是</label>
-        <label style='margin-left: 20rpx'><radio value="0"/>否</label>
+      <radio-group name="defaultAddr">
+        <label><radio value="1" checked="{{radio1}}"/>是</label>
+        <label style='margin-left: 20rpx'><radio value="0" checked="{{radio0}}"/>否</label>
       </radio-group>
     </view>
 
     <view>
-      <button formType="submit" style="background:#ff9900">提交</button>
+      <button class="btn" formType="submit" style="background:#ff9900;">提交</button>
     </view>
+    
+    <view style='margin-top: 30rpx' >
+      <button class="btn" wx:if="{{addr != null}}" bindtap="delAddr" data-id="{{addr.id}}" style="background:#ca0c16">删除</button>
+    </view>
+
   </form>
 </view>

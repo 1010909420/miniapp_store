@@ -14,22 +14,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var page = this;
-    wx.request({
-      url: app.globalData.ipUrl + 'GetAddrListByUserId?id=' + app.globalData.userId,
-      success: json => {
-        console.log(json);
-        this.setData({
-          addrlist: json.data
-        });
-      }
-    })
+    
   },
 
 
   edit: function (event) {
     wx.navigateTo({
-      url: 'edit?id=' + event.currentTarget.dataset.id,
+      url: 'edit?id=' + event.currentTarget.dataset.id + '&userId=' + app.globalData.userId,
     })
   },
 
@@ -44,7 +35,22 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var page = this;
+    var userId = app.globalData.userId;
+    wx.request({
+      url: app.globalData.ipUrl + 'GetAddrListByUserId',
+      data: {
+        id: userId
+      },
+      method: 'post',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: json => {
+        console.log(json);
+        this.setData({
+          addrlist: json.data
+        });
+      }
+    })
   },
 
   /**

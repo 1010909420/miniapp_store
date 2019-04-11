@@ -24,4 +24,5 @@
   </view>
 </view> -->
 
-<button bindtap="edit" data-id="0">添加新地址</button>
+<button wx:if="{{addrlist.length <= 10}}" bindtap="edit" data-id="0">添加新地址</button>
+<button wx:if="{{addrlist.length > 10}}" bindtap="edit" data-id="0" disabled>地址不能超过10个</button>
